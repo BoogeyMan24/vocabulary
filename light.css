@@ -168,18 +168,20 @@ a.fancy-link:not(.notadded):hover:after{
 }
 
 #input {
+	margin-bottom: 3vh;
 	box-sizing: border-box;
 	padding-left: 10px;
 	border-radius: 25px;
+	background-color: #ffffff;
 
-	border: 3px solid #ccc;	
-	-webkit-transition: 0.5s;
-	transition: 0.5s;
+	border: 4px solid #cccccc;	
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
 	outline: none;
 }
 
 #input:focus {
-	border: 3px solid rgb(152, 152, 152);
+	border: 3px solid #a8a8a8;
 }
 
 #list {
