@@ -56,11 +56,15 @@ let act;
 let current;
 let limit = [1, 20];
 let enter = false;
-let mode = "light";
 
 window.onload = function() {
-	mode = localStorage.getItem("mode");
-	console.log(localStorage.getItem("mode"));
+	if(localStorage.getItem("mode") == null) {
+		localStorage.setItem("mode", "light");
+	} else if(localStorage.getItem("mode") == "light") {
+		lightMode();
+	} else if (localStorage.getItem("mode") == "dark") {
+		darkMode();
+	}
 	act = (document.getElementById("active") != null ? parseInt(document.getElementById("active").innerHTML.slice(-1))-1 : null);
 	current = getRandomInt(limit[0]-1, limit[1]-1);
 	if(act != null) {
@@ -130,12 +134,21 @@ function getRandomInt(min, max) {
 
 
 
-function setModeAndSave(string) {
-	mode = string;
-	localStorage.setItem("mode", string);
+function toggleMode() {
+	if (localStorage.getItem("mode") == "light"){
+		darkMode();
+	} else if (localStorage.getItem("mode") == "dark") {
+		lightMode();
+	}
 }
 
 
-function print() {
-	console.log(localStorage.getItem("mode"));
+function darkMode() {
+	document.getElementById("link").setAttribute("href", "dark.css");
+	localStorage.setItem("mode", "dark");
+}
+
+function lightMode() {
+	document.getElementById("link").setAttribute("href", "light.css");
+	localStorage.setItem("mode", "light");
 }
