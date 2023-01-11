@@ -56,9 +56,11 @@ let act;
 let current;
 let limit = [1, 20];
 let enter = false;
-
+let mode = "light";
 
 window.onload = function() {
+	mode = localStorage.getItem("mode");
+	console.log(localStorage.getItem("mode"));
 	act = (document.getElementById("active") != null ? parseInt(document.getElementById("active").innerHTML.slice(-1))-1 : null);
 	current = getRandomInt(limit[0]-1, limit[1]-1);
 	if(act != null) {
@@ -124,4 +126,16 @@ function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min) + min);
+}
+
+
+
+function setModeAndSave(string) {
+	mode = string;
+	localStorage.setItem("mode", string);
+}
+
+
+function print() {
+	console.log(localStorage.getItem("mode"));
 }
