@@ -1,6 +1,27 @@
-let vocabulary = ["assay", "purport", "entreat", "rebuke", "expostulate", "brevity", "carrion", "contrive", "tedious", "promontory", "rapier", "indict", "visage", "offal", "rogue", "appurtenance", "arras", "clouts", "discretion", "fain"];
+let vocabulary = ["apparition", "assail", "smite", "martial", "obligation", "sterling", "censure", "apt", "tainted", "arrant", "knave", "antic", "perturbed", "emulate", "mettle", "mote", "harbinger", "erring", "auspicious", "suspiration"];
 
-let definitions = ["a test of a substance to determine its components", "have the often-misleading appearance of being or intending", "ask for or request earnestly", "an act or expression of criticism and censure", "reason with for the purpose of dissuasion", "the attribute of being short or fleeting", "the dead and rotting body of an animal; unfit for human food", "make or work out a plan for; devise", "so lacking in interest as to cause mental weariness", "a natural elevation", "a straight sword with a narrow blade and two edges", "accuse formally of a crime", "have the often misleading appearance of being or intending", "viscera and trimmings of a butchered animal", "a deceitful and unreliable scoundrel", "accessory", "wall hangings; usually to hide an alcove", "cloth or clothing", "careful choice", "gladly; willingly"]
+let definitions = [
+	"a ghostly appearing figure",
+ 	"attack in speech or writing",
+  	"inflict a heavy blow on, with the hand, a tool, or a weapon",
+    "suggesting war or military life",
+    "the state of being bound to do or pay something",
+	"highest in quality",
+	"harsh criticism or disapproval",
+	"being of striking appropriateness and relevance",
+	"touched by rot or decay",
+	"complete and without qualification",
+	"a deceitful and unreliable scoundrel",
+	"ludicrously odd",
+	"thrown into a state of agitated confusion",
+	"strive to equal or match, especially by imitating",
+	"the courage to carry on",
+	"a tiny piece of anything",
+	"something indicating the approach of something or someone",
+	"capable of making an error",
+	"indicating favorable circumstances and good luck",
+	"an utterance made by exhaling audibly",
+]
 
 let current
 let limit = [1, 20];

@@ -115,6 +115,10 @@ section ul li a {
     color: #ffffff;
 }
 
+section ul li a:hover {
+	color: #c1c1c1;
+}
+
 #title {
 	margin-bottom: 30vh;
     position: absolute;
@@ -178,4 +182,8 @@ section ul li a {
 section ul li input {
 	margin-bottom: 2vh;
 	height: 6vh;
+}
+
+a.notadded {
+	color: #d0d0d0;
 }

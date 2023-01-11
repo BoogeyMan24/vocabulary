@@ -1,6 +1,27 @@
-let vocabulary = ["assay", "purport", "entreat", "rebuke", "expostulate", "brevity", "carrion", "contrive", "tedious", "promontory", "rapier", "indict", "visage", "offal", "rogue", "appurtenance", "arras", "clouts", "discretion", "fain"];
+let vocabulary = ["assay","purport", "entreat", "rebuke", "expostulate", "brevity", "carrion", "contrive", "tedious", "promontory", "rapier", "indict", "visage", "offal", "rogue", "appurtenance", "arras", "clouts", "discretion", "fain"];
 
-let definitions = ["a test of a substance to determine its components", "have the often-misleading appearance of being or intending", "ask for or request earnestly", "an act or expression of criticism and censure", "reason with for the purpose of dissuasion", "the attribute of being short or fleeting", "the dead and rotting body of an animal; unfit for human food", "make or work out a plan for; devise", "so lacking in interest as to cause mental weariness", "a natural elevation", "a straight sword with a narrow blade and two edges", "accuse formally of a crime", "have the often misleading appearance of being or intending", "viscera and trimmings of a butchered animal", "a deceitful and unreliable scoundrel", "accessory", "wall hangings; usually to hide an alcove", "cloth or clothing", "careful choice", "gladly; willingly"]
+let definitions = [
+	"a test of a substance to determine its components",
+ 	"have the often-misleading appearance of being or intending",
+  	"ask for or request earnestly",
+  	"an act or expression of criticism and censure",
+	"reason with for the purpose of dissuasion",
+	"the attribute of being short or fleeting",
+	"the dead and rotting body of an animal; unfit for human food",
+	"make or work out a plan for; devise",
+	"so lacking in interest as to cause mental weariness",
+	"a natural elevation",
+	"a straight sword with a narrow blade and two edges",
+	"accuse formally of a crime",
+	"have the often misleading appearance of being or intending",
+	"viscera and trimmings of a butchered animal",
+	"a deceitful and unreliable scoundrel",
+	"accessory",
+	"wall hangings; usually to hide an alcove",
+	"cloth or clothing",
+	"careful choice",
+	"gladly; willingly",
+]
 
 let current
 let limit = [1, 20];
