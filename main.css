@@ -116,7 +116,35 @@ section ul li a {
 }
 
 section ul li a:hover {
-	color: #c1c1c1;
+	color: #eeeeee;
+}
+
+
+
+section ul li input {
+	margin-bottom: 2vh;
+	height: 6vh;
+}
+
+section ul li a.notadded {
+	color: #d0d0d0;
+}
+
+a.fancy-link:not(.notadded):after {    
+	background: none repeat scroll 0 0 transparent;
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: relative;
+	background: #fff;
+	transition: width 0.1s ease 0s, left 0.1s ease 0s;
+	width: 0;
+}
+a.fancy-link:not(.notadded):hover:after{ 
+	width: 100%; 
+	left: 0; 
 }
 
 #title {
@@ -177,13 +205,4 @@ section ul li a:hover {
 
 #button:active {
 	background-color: #cdcdcd;
-}
-
-section ul li input {
-	margin-bottom: 2vh;
-	height: 6vh;
-}
-
-a.notadded {
-	color: #d0d0d0;
 }
