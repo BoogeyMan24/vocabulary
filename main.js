@@ -39,7 +39,7 @@ let definitions2 = [
 	"a natural elevation",
 	"a straight sword with a narrow blade and two edges",
 	"accuse formally of a crime",
-	"have the often misleading appearance of being or intending",
+	"the appearance conveyed by a person's face",
 	"viscera and trimmings of a butchered animal",
 	"a deceitful and unreliable scoundrel",
 	"accessory",
