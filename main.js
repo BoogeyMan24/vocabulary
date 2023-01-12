@@ -58,7 +58,7 @@ let limit = [1, 20];
 let enter = false;
 
 window.onload = function() {
-	if(!localStorage.getItem("mode")) {
+	if(localStorage.getItem("mode") == null) {
 		localStorage.setItem("mode", "light");
 	} else if(localStorage.getItem("mode") == "light") {
 		lightMode();
@@ -157,4 +157,4 @@ function getStorage(string) {
 	} else {
 		localStorage.getItem("mode")
 	}
-} 
+}
