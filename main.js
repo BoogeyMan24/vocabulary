@@ -58,7 +58,7 @@ let limit = [1, 20];
 let enter = false;
 
 window.onload = function() {
-	if(localStorage.getItem("mode") == null) {
+	if(!localStorage.getItem("mode")) {
 		localStorage.setItem("mode", "light");
 	} else if(localStorage.getItem("mode") == "light") {
 		lightMode();
@@ -84,8 +84,6 @@ function buttonClick() {
 	if(document.getElementById("input").value.replace(/\s/g,'') == "" && enter == false) {
 		return;
 	}
-	console.log(document.getElementById("input").value.toLowerCase() == vocabulary[act][current]);
-	console.log(enter == false);
 	if (document.getElementById("input").value.toLowerCase() == vocabulary[act][current] && enter == false) {
 		console.log("correct")
 		document.getElementById("definition").innerHTML = `<center>Correct!</center><center>It is: ${vocabulary[act][current].charAt(0).toUpperCase() + vocabulary[act][current].slice(1)}</center>`
@@ -100,7 +98,6 @@ function buttonClick() {
 }
 
 function reset() {
-	console.log("reset")
 	current = getRandomInt(limit[0]-1, limit[1]-1);
 	document.getElementById("definition").innerHTML = definitions[act][current];
 	document.getElementById("input").value = "";
@@ -152,3 +149,12 @@ function lightMode() {
 	document.getElementById("link").setAttribute("href", "light.css");
 	localStorage.setItem("mode", "light");
 }
+
+
+function getStorage(string) {
+	if (!string) {
+		localStorage.getItem(string);
+	} else {
+		localStorage.getItem("mode")
+	}
+} 
