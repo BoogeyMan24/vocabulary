@@ -66,10 +66,11 @@ window.onload = function() {
 		darkMode();
 	}
 	act = (document.getElementById("active") != null ? parseInt(document.getElementById("active").innerHTML.slice(-1))-1 : null);
-	current = getRandomInt(limit[0]-1, limit[1]);
-	if(act != null) {
-		document.getElementById("definition").innerHTML = definitions[act][current];
-	}
+	// current = getRandomInt(limit[0]-1, limit[1]);
+	// if(act != null) {
+	// 	document.getElementById("definition").innerHTML = definitions[act][current];
+	// }
+	reset();
 };
 
 
@@ -98,14 +99,17 @@ function buttonClick() {
 }
 
 function reset() {
-	current = getRandomInt(limit[0]-1, limit[1]-1);
-	document.getElementById("definition").innerHTML = definitions[act][current];
-	document.getElementById("input").value = "";
+	if(act != null) {
+		current = getRandomInt(limit[0]-1, limit[1]);
+		document.getElementById("definition").innerHTML = definitions[act][current];
+		document.getElementById("input").value = "";
+	}
+	
 }
 
 
-function changeCurrent(number) {
-	current = number;
+function changeCurrent(variable) {
+	current =  vocabulary[act].indexOf(variable) || variable;
 	document.getElementById("definition").innerHTML = definitions[act][current];
 }
 
