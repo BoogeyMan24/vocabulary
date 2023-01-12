@@ -66,7 +66,7 @@ window.onload = function() {
 		darkMode();
 	}
 	act = (document.getElementById("active") != null ? parseInt(document.getElementById("active").innerHTML.slice(-1))-1 : null);
-	current = getRandomInt(limit[0]-1, limit[1]-1);
+	current = getRandomInt(limit[0]-1, limit[1]);
 	if(act != null) {
 		document.getElementById("definition").innerHTML = definitions[act][current];
 	}
