@@ -2,7 +2,7 @@
 
 :root
 {
-    font-family: sans-serif, 'calibri', 'times new roman';
+    font-family: 'Poppins', sans-serif;
 }
 
 ::-moz-selection 
@@ -173,6 +173,7 @@ a.fancy-link:not(.notadded):hover:after{
     color: #d4d4d4;
     white-space: nowrap;
     font-size: 3vw;
+	font-weight: 700;
     z-index: 2;
 }
 
