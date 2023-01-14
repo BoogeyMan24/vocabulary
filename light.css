@@ -15,9 +15,10 @@
     background: rgba(75, 78, 137, 0.2);/*rgba(104, 110, 186, 0.2);*/
 }
 
-html
-{
-    overflow: hidden;
+html, body {
+	background-color: linear-gradient(#456fc4, #c1915e);
+	margin: 0; height: 100%;
+	overflow: hidden;
 }
 
 * {
@@ -45,7 +46,7 @@ header {
 }
 
 header .logo {
-    color: #ffffff;
+    color: #d4d4d4;
 	background: transparent;
 	border: transparent;
     font-weight: 700;
@@ -96,6 +97,15 @@ section {
     overflow: hidden;
 }
 
+div {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 60%;
+	height: 50%;
+
+}
+
 section ul {
 	margin-bottom: 1vh;
 	display: flex;
@@ -140,7 +150,7 @@ a.fancy-link:not(.notadded):after {
 	height: 2px;
 	left: 50%;
 	position: relative;
-	background: #fff;
+	background: #ffffff;
 	transition: width 0.1s ease 0s, left 0.1s ease 0s;
 	width: 0;
 }
@@ -208,4 +218,105 @@ a.fancy-link:not(.notadded):hover:after{
 
 #button:active {
 	background-color: #cdcdcd;
+}
+
+
+@media screen and (orientation:portrait) {
+	* {
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	header .logo {
+		display: none;
+	}
+
+	#title {
+		margin-bottom: 5em;
+		position: absolute;
+		color: #ffffff;
+		white-space: nowrap;
+		font-size: 7em;
+		z-index: 2;
+	}
+
+	#list {
+		text-decoration: none;
+		display: inline-block;
+		padding: 5px 18px;
+		font-size: 3em;
+		transform: translateY(100px);
+		z-index: 2;
+	}
+
+	div {
+		margin-bottom: 30em;
+	}
+
+	header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 30px 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 2;
+	}
+
+	header ul li a {
+		text-decoration: none;
+		padding: 6px 15px;
+		color: #ffffff;
+		border-radius: 40px;
+		transition: background 0.6s;
+		font-size: 2em;
+	}
+
+	section ul.inputs {
+		margin-bottom: -16vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#definition {
+		margin-bottom: 30vh;
+		position: absolute;
+		color: #ffffff;
+		white-space: nowrap;
+		font-size: 4.5em;
+		font-weight: 600;
+		white-space: initial;
+		text-align: center;
+		width: 80%;
+		z-index: 2;
+	}
+	
+	#input {
+		margin-bottom: 1em;
+		width: 12em;
+		height: 2em;
+		box-sizing: border-box;
+		padding-left: 30px;
+		border-radius: 50px;
+		background-color: #ffffff;
+	
+		border: 4px solid #cccccc;	
+		-webkit-transition: 0.3s;
+		transition: 0.3s;
+		outline: none;
+		font-size: 1em;
+	}
+
+	#button {
+		margin-bottom: 20em;
+		width: 35em;
+		height: 4vh;
+		border: 100px;
+		border-radius: 50px;
+		background-color: #ffffff;
+	}
 }
