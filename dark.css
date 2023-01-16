@@ -169,7 +169,7 @@ a.fancy-link:not(.notadded):hover:after{
     z-index: 2;
 }
 
-#definition {
+.definition {
 	margin-bottom: 30vh;
     position: absolute;
     color: #d4d4d4;
