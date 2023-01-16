@@ -2,7 +2,8 @@
 
 :root
 {
-    font-family: sans-serif, 'calibri', 'times new roman';
+	font-family: 'Poppins', sans-serif;
+	--background: linear-gradient(#456fc4, #c1915e);
 }
 
 ::-moz-selection 
@@ -16,7 +17,6 @@
 }
 
 html, body {
-	background-color: linear-gradient(#456fc4, #c1915e);
 	margin: 0; height: 100%;
 	overflow: hidden;
 }
@@ -30,7 +30,9 @@ html, body {
 
 body {
     min-height: 100vh;
-	background: linear-gradient(#456fc4, #c1915e);
+	background-image: var(--background);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 header {
@@ -49,7 +51,7 @@ header .logo {
     color: #ffffff;
 	background: transparent;
 	border: transparent;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     font-size: 1em;
     text-transform: uppercase;

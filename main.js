@@ -76,10 +76,29 @@ let definitions3 = [
 ];
 
 
-let act4 = ["assay","purport", "entreat", "rebuke", "expostulate", "brevity", "carrion", "contrive", "tedious", "promontory", "rapier", "indict", "visage", "offal", "rogue", "appurtenance", "arras", "clouts", "discretion", "fain"];
+let act4 = ["abatements","cherub", "conjectures", "countenance", "convocation", "discord", "divulging", "exhort", "exploit", "imminent", "hence", "incensed", "inter", "oblivion", "obscure", "peruse", "remiss", "replication", "spendthrift", "superfluous"];
 
 let definitions4 = [
-
+	"a reduction in the amount or degree of something",
+	"an angel that is represented in art as a beautiful, fat, naked child with small wings",
+	"a guess about something based on how it seems and not on proof",
+	"the appearance or expression of someone's face",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
 ];
 
 let vocabulary = [act1, act2, act3, act4];
@@ -88,6 +107,7 @@ let act;
 let current;
 let limit = [1, 20];
 let enter = false;
+let count = 0;
 
 window.onload = function() {
 	if(localStorage.getItem("mode") == null) {
@@ -168,6 +188,13 @@ function getRandomInt(min, max) {
 
 
 function toggleMode() {
+	count++;
+	console.log(count);
+	if (count >= 100) {
+		console.log("true");
+		amongUs();
+		return;
+	}
 	if (localStorage.getItem("mode") == "light"){
 		darkMode();
 	} else if (localStorage.getItem("mode") == "dark") {
@@ -186,6 +213,10 @@ function lightMode() {
 	localStorage.setItem("mode", "light");
 }
 
+function amongUs() {
+	let r = document.querySelector(':root');
+	r.style.setProperty('--background', 'url(./images/amongus.png)');
+}
 
 function getStorage(string) {
 	if (!string) {

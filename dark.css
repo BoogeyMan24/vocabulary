@@ -3,6 +3,7 @@
 :root
 {
     font-family: 'Poppins', sans-serif;
+	--background: linear-gradient(#2e3137, #4a4c52);
 }
 
 ::-moz-selection 
@@ -16,7 +17,6 @@
 }
 
 html, body {
-	background-color: linear-gradient(#2e3137, #4a4c52);
 	margin: 0; height: 100%;
 	overflow: hidden;
 }
@@ -30,7 +30,9 @@ html, body {
 
 body {
     min-height: 100vh;
-	background: linear-gradient(#2e3137, #4a4c52);
+	background-image: var(--background);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 header {
