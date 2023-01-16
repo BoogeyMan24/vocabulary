@@ -174,9 +174,12 @@ a.fancy-link:not(.notadded):hover:after{
 	margin-bottom: 30vh;
     position: absolute;
     color: #ffffff;
-    white-space: nowrap;
+    white-space: initial;
     font-size: 3vw;
 	font-weight: 700;
+	text-align: center;
+	width: 85%;
+	word-wrap: break-word;
     z-index: 2;
 }
 
