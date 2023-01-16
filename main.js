@@ -50,8 +50,40 @@ let definitions2 = [
 ];
 
 
-let vocabulary = [act1, act2];
-let definitions = [definitions1, definitions2];
+let act3 = ["turbulent","affront", "espial", "calamity", "insolence", "spurn", "bodkin", "awry", "inoculate", "knave", "calumny", "temperance", "termagant", "lament", "clemency", "withers", "provincial", "gambol", "prate", "perchance"];
+
+let definitions3 = [
+	"disorderly, riotous, violent; stormy",
+	"an open or intentional insult; a slight",
+	"the act of spying",
+	"an event that causes great misfortune; a disaster",
+	"showing a rude and arrogant lack of respect",
+	"to reject scornfully",
+	"a small sharp-pointed tool for punching holes in leather or fabric",
+	"twisted or turned; wrong, amiss, off course",
+	"a way of protection against sickness where they expose the person to a little bit of the disease to make them immune",
+	"an unprincipled, untrustworthy, or dishonest person",
+	"a false and malicious accusation deliberately meant to hurt someone's reputation",
+	"moderation, self-control, esp. regarding alcohol or other desires or pleasures",
+	"a scolding nagging bad-tempered woman",
+	"to express sorrow or regret; to mourn",
+	"mercy, humaneness; mildness, moderateness",
+	"the highest part of the back at the base of the neck of various animals especially draft animals",
+	"a narrow minded person",
+	"to run or jump about playfully",
+	"to talk a great deal in a foolish or aimless fashion",
+	"perhaps; maybe; possibly",
+];
+
+
+let act4 = ["assay","purport", "entreat", "rebuke", "expostulate", "brevity", "carrion", "contrive", "tedious", "promontory", "rapier", "indict", "visage", "offal", "rogue", "appurtenance", "arras", "clouts", "discretion", "fain"];
+
+let definitions4 = [
+
+];
+
+let vocabulary = [act1, act2, act3, act4];
+let definitions = [definitions1, definitions2, definitions3, definitions4];
 let act;
 let current;
 let limit = [1, 20];
@@ -101,7 +133,7 @@ function buttonClick() {
 function reset() {
 	if(act != null) {
 		current = getRandomInt(limit[0]-1, limit[1]);
-		document.getElementById("definition").innerHTML = definitions[act][current];
+		document.getElementById("definition").innerHTML = "<center>" + definitions[act][current] + "<center>";
 		document.getElementById("input").value = "";
 	}
 	
