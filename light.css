@@ -137,7 +137,7 @@ section ul li a:hover {
 .input {
 	margin-bottom: 2em;
 	height: 4.25em;
-	width: 20em
+	width: 20em;
 }
 
 section ul li a.notadded {
@@ -195,16 +195,16 @@ label {
     position: absolute;
     color: #ffffff;
     white-space: nowrap;
-    font-size: 6vw;
+    font-size: 5.4em;
     z-index: 2;
 }
 
 section div h5.definition {
-	margin-bottom: 30vh;
+	margin-bottom: 7em;
     position: absolute;
     color: #ffffff;
     white-space: initial;
-    font-size: 3vw;
+    font-size: 5.5vh;
 	font-weight: 700;
 	text-align: center;
 	width: 85%;
@@ -212,11 +212,11 @@ section div h5.definition {
     z-index: 2;
 }
 
-#input {
+.input {
 	margin-bottom: 2em;
 	box-sizing: border-box;
 	padding-left: 10px;
-	border-radius: 25px;
+	border-radius: 50px;
 	background-color: #ffffff;
 
 	border: 4px solid #cccccc;	
@@ -225,7 +225,7 @@ section div h5.definition {
 	outline: none;
 }
 
-#input:focus {
+.input:focus {
 	border: 3px solid #a8a8a8;
 }
 
@@ -310,12 +310,6 @@ section div h5.definition {
 
 .sliderContainer:hover + .limitContainer {
 	opacity: 1;
-}
-
-@media screen and (orientation:landscape) {
-	div.footer {
-		display: none;
-	}
 }
 
 @media screen and (orientation:portrait) {
