@@ -108,7 +108,7 @@ div {
 }
 
 section ul {
-	margin-bottom: 1vh;
+	margin-bottom: 1em;
 	display: flex;
     justify-content: center;
     align-items: center;
@@ -134,9 +134,10 @@ section ul li a:hover {
 
 
 
-section ul li input {
-	margin-bottom: 2vh;
-	height: 6vh;
+.input {
+	margin-bottom: 2em;
+	height: 4.25em;
+	width: 20em
 }
 
 section ul li a.notadded {
@@ -160,6 +161,35 @@ a.fancy-link:not(.notadded):hover:after{
 	left: 0; 
 }
 
+footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+	margin-top: 92vh;
+	height: 8vh;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    z-index: 5;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul li {
+	position: relative;
+	padding-left: 2em;
+}
+label {
+	padding-left: 0.25em;
+	color: #ffffff;
+}
+
 #title {
 	margin-bottom: 30vh;
     position: absolute;
@@ -169,7 +199,7 @@ a.fancy-link:not(.notadded):hover:after{
     z-index: 2;
 }
 
-.definition {
+section div h5.definition {
 	margin-bottom: 30vh;
     position: absolute;
     color: #ffffff;
@@ -183,7 +213,7 @@ a.fancy-link:not(.notadded):hover:after{
 }
 
 #input {
-	margin-bottom: 3vh;
+	margin-bottom: 2em;
 	box-sizing: border-box;
 	padding-left: 10px;
 	border-radius: 25px;
@@ -208,21 +238,78 @@ a.fancy-link:not(.notadded):hover:after{
     z-index: 2;
 }
 
-#button {
-	margin-bottom: 15vh;
-	width: 8.5vw;
-	height: 4vh;
+.button {
+	width: 10em;
+	height: 3em;
 	border: 100px;
 	border-radius: 20px;
 	background-color: #ffffff;
+	margin: 1em;
 }
 
-#button:hover {
+.buttonstag {
+	width: 25vw !important;
+}
+
+.enter {
+	/* margin-bottom: 3em; */
+}
+
+.reveal {
+	/*margin-bottom: 20em;*/
+}
+
+
+.button:hover {
 	background-color: #e7e4e4;
 }
 
-#button:active {
+.button:active {
 	background-color: #cdcdcd;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 15px;
+	border-radius: 20px;   
+	background: #ffffff;
+	outline: none;
+	-webkit-transition: .3s;
+	transition: opacity .3s;
+}
+  
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%; 
+	background: #cfcfcf;
+	cursor: pointer;
+}
+  
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #cfcfcf;
+	cursor: pointer;
+}
+
+.limit {
+	padding-top: 1em;
+	color: #ffffff;
+	font-size: 1em;
+}
+
+.limitContainer {
+	opacity: 0;
+	transition: ease 1s;
+}
+
+.sliderContainer:hover + .limitContainer {
+	opacity: 1;
 }
 
 @media screen and (orientation:landscape) {
@@ -279,7 +366,7 @@ a.fancy-link:not(.notadded):hover:after{
 	header ul li a {
 		text-decoration: none;
 		padding: 6px 15px;
-		color: #ffffff;
+		color: #d2d2d2;
 		border-radius: 40px;
 		transition: background 0.6s;
 		font-size: 2em;
@@ -295,7 +382,7 @@ a.fancy-link:not(.notadded):hover:after{
 	#definition {
 		margin-bottom: 30vh;
 		position: absolute;
-		color: #ffffff;
+		color: #d4d4d4;
 		white-space: nowrap;
 		font-size: 4.5em;
 		font-weight: 600;

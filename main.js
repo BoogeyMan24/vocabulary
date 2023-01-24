@@ -104,12 +104,24 @@ let definitions4 = [
 let vocabulary = [act1, act2, act3, act4];
 let definitions = [definitions1, definitions2, definitions3, definitions4];
 let act;
-let current;
+let current = 0;
 let limit = [1, 20];
 let enter = false;
 let count = 0;
+let slider = null;
 
 window.onload = function() {
+	slider = document.getElementById("slider");
+	if(slider != null) {
+		document.getElementById("limit").innerHTML = slider.value;
+
+		slider.oninput = function sliderValue() {
+			document.getElementById("limit").innerHTML = slider.value;
+			limit[1] = slider.value;
+			reset();
+		};
+	}
+
 	if(localStorage.getItem("mode") == null) {
 		localStorage.setItem("mode", "light");
 	} else if(localStorage.getItem("mode") == "light") {
@@ -117,19 +129,25 @@ window.onload = function() {
 	} else if (localStorage.getItem("mode") == "dark") {
 		darkMode();
 	}
+
 	act = (document.getElementById("active") != null ? parseInt(document.getElementById("active").innerHTML.slice(-1))-1 : null);
-	// current = getRandomInt(limit[0]-1, limit[1]);
-	// if(act != null) {
-	// 	document.getElementById("definition").innerHTML = definitions[act][current];
-	// }
-	reset();
+
+	if(act != null) {
+		if(document.getElementById("slider") != null) {
+			document.getElementById("slider").setAttribute("max", vocabulary[act].length);
+			document.getElementById("slider").setAttribute("value", vocabulary[act].length);
+		}
+		limit = [1, vocabulary[act].length];
+		setChecks();
+		reset();
+	}
 };
 
 
 document.addEventListener('keydown', function(event) {
 	if(event.key == "Enter") {
         event.preventDefault();
-		document.getElementById("button").click();
+		document.getElementById("enter").click();
     }
 });
 
@@ -138,7 +156,6 @@ function buttonClick() {
 		return;
 	}
 	if (document.getElementById("input").value.toLowerCase() == vocabulary[act][current] && enter == false) {
-		console.log("correct")
 		document.getElementById("definition").innerHTML = `<center>Correct!</center><center>It is: ${vocabulary[act][current].charAt(0).toUpperCase() + vocabulary[act][current].slice(1)}</center>`
 		enter = true;
 	} else if (document.getElementById("input").value.toLowerCase() != vocabulary[act][current] && enter == false) {
@@ -150,13 +167,23 @@ function buttonClick() {
 	}
 }
 
+
+let notSeen = [];
 function reset() {
-	if(act != null) {
-		current = getRandomInt(limit[0]-1, limit[1]);
-		document.getElementById("definition").innerHTML = "<center>" + definitions[act][current] + "<center>";
-		document.getElementById("input").value = "";
+	if (notSeen.length <= 0) {
+		notSeen = notSeen.concat(vocabulary[act].splice(limit[1], vocabulary[act].length));
 	}
-	
+
+	if (localStorage.getItem("repetition", "true")) {
+		current = getRandomInt(limit[0]-1, limit[1]);
+	} else if (localStorage.getItem("repetition", "false")) {
+		let randomElement = notSeen[Math.floor(Math.random() * notSeen.length)];
+		current = notSeen.indexOf(randomElement);
+		notSeen.splice(current, 1);
+	}
+
+	document.getElementById("definition").innerHTML = "<center>" + definitions[act][current] + "<center>";
+	document.getElementById("input").value = "";
 }
 
 
@@ -185,13 +212,31 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min) + min);
 }
 
+function setChecks() {
+	if (localStorage.getItem("repetition") == null) {
+		localStorage.setItem("repetition", "false");
+	} else if (localStorage.getItem("repetition") == "true"){
+		document.getElementById("norepetition").checked = true;
+	} else if (localStorage.getItem("repetition") == "false"){
+		document.getElementById("norepetition").checked = false;
+	}
 
+	noRepetition();
+
+	if (localStorage.getItem("hidereveal") == null) {
+		localStorage.setItem("hidereveal", "false");
+	} else if (localStorage.getItem("hidereveal") == "true"){
+		document.getElementById("hidereveal").checked = true;
+	} else if (localStorage.getItem("hidereveal") == "false"){
+		document.getElementById("hidereveal").checked = false;
+	}
+
+	hideReveal()
+}
 
 function toggleMode() {
 	count++;
-	console.log(count);
 	if (count >= 100) {
-		console.log("true");
 		amongUs();
 		return;
 	}
@@ -201,6 +246,7 @@ function toggleMode() {
 		lightMode();
 	}
 }
+
 
 
 function darkMode() {
@@ -213,15 +259,51 @@ function lightMode() {
 	localStorage.setItem("mode", "light");
 }
 
+let reveal = true;
+function toggleReveal() {
+	if (reveal == true) {
+		document.getElementById("reveal").innerHTML = "Reveal";
+		document.getElementById("definition").innerHTML = "<center>" + definitions[act][current] + "<center>";
+		reveal = false;
+	} else {
+		document.getElementById("reveal").innerHTML = "Definition";
+		document.getElementById("definition").innerHTML = "<center>" + vocabulary[act][current] + "<center>";
+		reveal = true;
+	}
+}
+
+function hideReveal() {
+	if (document.getElementById("hidereveal").checked == false) {
+		document.getElementById("reveal").style.display = "block";
+		localStorage.setItem("hidereveal", "false");
+	} else {
+		document.getElementById("reveal").style.display = "none";
+		localStorage.setItem("hidereveal", "true");
+	}
+}
+
+function noRepetition() {
+	if (document.getElementById("norepetition").checked == false) {
+		localStorage.setItem("repetition", "false")
+	} else {
+		localStorage.setItem("repetition", "true")
+	}
+
+	notSeen = [];
+	reset();
+}
+
+
+
 function amongUs() {
 	let r = document.querySelector(':root');
 	r.style.setProperty('--background', 'url(./images/amongus.png)');
 }
 
 function getStorage(string) {
-	if (!string) {
-		localStorage.getItem(string);
+	if (string != null) {
+		console.log(localStorage.getItem(string));
 	} else {
-		localStorage.getItem("mode")
+		console.log(localStorage.getItem("mode"));
 	}
 }
