@@ -174,6 +174,7 @@ function reset() {
 		notSeen = notSeen.concat(vocabulary[act].splice(limit[1], vocabulary[act].length));
 	}
 
+	toggleReveal(false);
 	if (localStorage.getItem("repetition", "true")) {
 		current = getRandomInt(limit[0]-1, limit[1]);
 	} else if (localStorage.getItem("repetition", "false")) {
@@ -260,15 +261,19 @@ function lightMode() {
 }
 
 let reveal = true;
-function toggleReveal() {
+function toggleReveal(toggle) {
 	if (reveal == true) {
 		document.getElementById("reveal").innerHTML = "Reveal";
 		document.getElementById("definition").innerHTML = "<center>" + definitions[act][current] + "<center>";
-		reveal = false;
+		if(toggle == null || toggle == true) {
+			reveal = false;
+		}
 	} else {
 		document.getElementById("reveal").innerHTML = "Definition";
 		document.getElementById("definition").innerHTML = "<center>" + vocabulary[act][current] + "<center>";
-		reveal = true;
+		if(toggle == null || toggle == true) {
+			reveal = true;
+		}
 	}
 }
 
